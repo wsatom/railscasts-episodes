@@ -1,5 +1,31 @@
-<% title "Messages" %>
+<div id="menu">
+  <ul>
+	<li>Carrier</li>
+	  <div>
+		<ul>
+		  <li><%= nested_messages @messages.arrange(:order => :created_at) %></li>
+		</ul>
+		<ul>
+		  <li>USPS</li>
+		</ul>
+	  </div>
+  </ul>
+  <ul>
+	<li>Country</li>
+	  <div>
+		<ul>
+		  <li>USA</li>
+		</ul>
+		<ul>
+		  <li>England</li>
+		</ul>
+		<ul>
+		  <li>France</li>
+		</ul>
+	  </div>
+  </ul>
+</div>
 
-<%= nested_messages @messages.arrange(:order => :created_at) %>
 
 <%= render "form" %>
+<%= render "submessages" %>

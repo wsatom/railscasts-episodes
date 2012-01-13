@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110418032505) do
+ActiveRecord::Schema.define(:version => 20120113154442) do
 
   create_table "messages", :force => true do |t|
     t.text     "content"
@@ -20,5 +20,14 @@ ActiveRecord::Schema.define(:version => 20110418032505) do
   end
 
   add_index "messages", ["ancestry"], :name => "index_messages_on_ancestry"
+
+  create_table "submessages", :force => true do |t|
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "ancestry"
+  end
+
+  add_index "submessages", ["ancestry"], :name => "index_submessages_on_ancestry"
 
 end
