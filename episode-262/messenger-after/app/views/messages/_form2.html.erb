@@ -1,0 +1,21 @@
+<%= form_for @message do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field :parent_id %>
+  <p>
+    <%= f.label :content, "Add a Country to your carrier" %><br />
+    <%= f.text_area :content, :rows => 8 %>
+  </p>
+  <p><%= f.submit "Post Message" %></p>
+<% end %>
+
+<div class="message">
+  <div class="created_at"><%= message.created_at.strftime("%B %d, %Y") %></div>
+  <div class="content">
+    <%= link_to message.content, message %>
+  </div>
+  <div class="actions">
+    <%= link_to "Reply", new_message_path(:parent_id => message) %> |
+    <%= link_to "Destroy", message, :confirm => "Are you sure?", :method => :delete %>
+  </div>
+</div>
+`
