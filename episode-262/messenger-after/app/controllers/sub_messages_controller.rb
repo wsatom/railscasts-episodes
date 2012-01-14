@@ -26,4 +26,5 @@ class MessagesController < ApplicationController
     @message.destroy
     redirect_to messages_url
   end
+
 end

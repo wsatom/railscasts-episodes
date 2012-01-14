@@ -7,6 +7,10 @@ class MessagesController < ApplicationController
   def show
     @message = Message.find(params[:id])
   end
+  
+  def sort
+    @sorted_messages
+  end
 
   def new
     @message = Message.new(:parent_id => params[:parent_id])
@@ -27,3 +31,4 @@ class MessagesController < ApplicationController
     redirect_to messages_url
   end
 end
+
